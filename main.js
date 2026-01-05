@@ -165,3 +165,73 @@ console.log(circle.area()); // ~28.27
 
 const square = new Square(4);
 console.log(square.area()); // 16
+
+
+
+
+
+
+class Book {
+    constructor(title, author) {
+        this.title = title;
+        this.author = author;
+    }
+    info() {
+        console.log(`the ${this.title} by ${this.author}`);
+    }
+}
+const book = new Book("1984", "George Orwell");
+book.info();
+
+class Person {
+    constructor(name) {
+        this.name = name
+    }
+    greet() {
+        console.log(`hello, i'm ${this.name}`)
+    }
+}
+
+class Student extends Person {
+    constructor(name, school) {
+        super(name);
+        this.school = school;
+    }
+    study() {
+        console.log(`${this.name} is studing at ${this.school}`)
+    }
+}
+
+const student1 = new Student('allice', 'oxford')
+student1.greet()
+student1.study()
+
+class Employee {
+    #salary
+    constructor(salary) {
+        this.#salary = salary
+    }
+    getSalary() {
+        console.log(this.#salary)
+    }
+    works() {
+        console.log('employee is working')
+    }
+}
+
+class Manager extends Employee {
+    constructor(salary) {
+        super(salary)
+    }
+    works() {
+        console.log('Manager is managing')
+    }
+}
+
+const employee = new Employee(4000)
+employee.getSalary()
+employee.works()
+
+const manager = new Manager(5000)
+manager.getSalary()
+manager.works()
